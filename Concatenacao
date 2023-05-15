@@ -1,0 +1,28 @@
+Escrevendo expressões de concatenação
+No PostGreSql, o operador de concatenação é o ||. Se desejássemos retornar o PRIM_NOME do empregado com o ULT_NOME, o comando seria:
+
+SELECT PRIM_NOME || ULT_NOME
+
+FROM EMPREGADO
+. Notou que os nomes ficarão colados?
+
+Isso decorre do fato de que, depois do PRIM_NOME ou antes do ULT_NOME, não existe espaço em branco armazenado na coluna. 
+
+Como resolver isso?
+
+Basta concatenar as colunas com um espaço em branco entre elas
+. Notou que os nomes estão colados?
+
+Isso decorre do fato de que, depois do PRIM_NOME ou antes do ULT_NOME, não existe espaço em branco armazenado na coluna. 
+
+Como resolver isso?
+
+Basta concatenar as colunas com um espaço em branco entre elas
+
+Botando o seguinte sql
+
+SELECT PRIM_NOME || ' ' || ULT_NOME FROM EMPREGADO
+No Oracle, o operador é o mesmo:
+SELECT PRIM_NOME || ' ' || ULT_NOME FROM EMPREGADO
+Já no SqlServer, o operador de concatenação é o + 
+SELECT PRIM_NOME + ' ' + ULT_NOME FROM EMPREGADO
